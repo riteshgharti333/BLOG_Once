@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap');
+
 .header {
   height: 40%;
   display: flex;
@@ -13,17 +15,21 @@
 
 .headerTitle{
   margin: 10px 0px;
+  font-family: 'ADLaM Display', cursive;
+
 }
 
 .headerBtn{
   background: teal;
   border: none;
   padding: 10px 15px;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 20px;
   color: white;
   border-radius: 4px;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
 }
 
 .headerImg {
