@@ -38,6 +38,7 @@
     border: none;
     padding: 20px;
     width: 70vw;
+    background: transparent;
 }
 
 .writeInput:focus{
