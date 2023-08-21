@@ -30,6 +30,8 @@ export default function Register() {
 
   return (
     <div className="register">
+    <div className="resgisterContainer">
+
       <span className="registerTitle">Register</span>
       <form className="registerForm" onSubmit={handleSubmit}>
         <label>Username</label>
@@ -63,5 +65,7 @@ export default function Register() {
       </button>
       { error && <span style={{color:"red" , marginTop:"10px"}}>Something went Wrong !</span>}
     </div>
+    </div>
+
   );
 }

@@ -19,12 +19,10 @@ export default function Sidebar() {
       <div className="sidebarItem">
         <span className="sidebarTitle">ABOUT ME </span>
         <img
-          src="https://images.unsplash.com/photo-1589148143859-12ea7b459803?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80"
+          src="https://wallpaperaccess.com/full/2362086.png"
           alt=""
         />
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-          aliquam quo laborum exercitationem
+        <p className="sidebarDsc">Welcome to my corner of the web! I'm <span className="name">Ritesh Gharti</span>, a passionate MERN stack developer on a mission to craft digital experiences that seamlessly blend technology and creativity.
         </p>
       </div>
       <div className="sidebarItem">

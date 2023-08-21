@@ -10,6 +10,8 @@ import Settings from './pages/settings/Settings';
 import Single from './pages/single/Single';
 import Write from './pages/write/Write';
 import "./app.css";
+import AboutUs from './pages/aboutUs/AboutUs';
+import ContactUs from './pages/contactUs/ContactUs';
 
 function App() {
   const { user } = useContext(Context);
@@ -27,13 +29,15 @@ function App() {
       element: <Layout />,
       children: [
         { path: '/', element: <Home /> },
-        { path: '/register', element: user ? <Home /> : <Register /> },
-        { path: '/login', element: user ? <Home /> : <Login /> },
         { path: '/write', element: user ? <Write /> : <Register /> },
+        { path: '/aboutUs', element: user ? <AboutUs /> : <Register /> },
+        { path: '/contactus', element: user ? <ContactUs /> : <Register /> },
         { path: '/settings', element: user ? <Settings /> : <Register /> },
         { path: '/post/:postId', element: <Single /> },
       ],
     },
+    { path: '/register', element: user ? <Home /> : <Register /> },
+    { path: '/login', element: user ? <Home /> : <Login /> },
   ]);
 
   return <RouterProvider router={router} />;

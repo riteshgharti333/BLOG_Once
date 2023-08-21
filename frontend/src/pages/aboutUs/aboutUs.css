@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Courgette&display=swap");
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.aboutContainer {
+  width: 60%;
+  padding: 20px;
+  border: 1px solid black;
+  display: flex;
+  background-image: linear-gradient(315deg, #303c4d 0%, #e186b4 74%);
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+}
+
+.follow{
+    text-align: center;
+    margin: 10px 0px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: white;
+}
+
+.followUsBtn{
+    font-size: 16px;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px 4px;
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.linkedin{
+    background-color: #0A66C2;
+}
+
+.github{
+    background-color: black;
+}
+
+
+.right{
+    flex: 1;
+}
+
+.intoImg {
+  height: 260px;
+}
+
+.hi{
+    color: purple;
+}
+
+.intro {
+  font-family: "ADLaM Display", cursive;
+  text-align: center;
+  color: purple;
+}
+
+.hibtn {
+  color: orange;
+}
+
+.introDsc {
+  color: white;
+  margin: 10px;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Courgette", cursive;
+}
