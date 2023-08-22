@@ -3,19 +3,11 @@
   margin: 0px 25px 40px 25px;
 }
 
-<<<<<<< HEAD
 .postImg {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 7px;
-=======
-.postImg{
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 7px;
->>>>>>> f60d49d02b9c4387c5872a47329ad1062551fa13
 }
 
 .postInfo {
