@@ -1,5 +1,5 @@
 import "./header.css";
-import headerImg from "../../images/35.png";
+// import headerImg from "../../images/35.png";
 import { Link } from "react-router-dom";
 
 export default function Header() {
@@ -18,7 +18,7 @@ export default function Header() {
         </div>
       </div>
       <div className="right">
-        <img className="headerImg" src={headerImg} alt="" />
+        {/* <img className="headerImg" src={headerImg} alt="" /> */}
       </div>
     </div>
   );

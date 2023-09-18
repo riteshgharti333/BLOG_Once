@@ -3,6 +3,7 @@ import { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./login.css";
+import bgImg from "../../images/bg.jpg"
 
 export default function Login() {
   const userRef = useRef();
@@ -25,6 +26,7 @@ export default function Login() {
 
   return (
     <div className="login">
+      <div className="centered">
       <span className="loginTitle">Login</span>
       <form className="loginForm" onSubmit={handleSubmit}>
         <label>Username</label>
@@ -45,6 +47,7 @@ export default function Login() {
           Login
         </button>
       </form>
+      </div>
       <button className="loginRegisterButton">
         <Link className="link" to="/register">
           Register
