@@ -1,50 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Courgette&family=Lilita+One&display=swap");
 
 .register {
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url("https://wallpapers.com/images/featured/doraemon-6ag1ry72uy2s9jmg.jpg");
-  background-size: cover;
-  position: relative;
-  width: 100%; /* Adjust this if needed */
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets/images/bg.jpg');
+  object-fit: cover;
 }
 
 .resgisterContainer {
-  border: 1px solid black;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  width: 30%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  padding: 40px;
+  align-items: center;
+  min-width: 300px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .registerTitle {
   font-size: 50px;
   font-family: "Lilita One", cursive;
+  color: white;
 }
 
 .registerForm {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .registerForm > label {
   margin: 10px 0;
+  font-size: 16px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 600;
 }
 
 .registerInput {
   padding: 10px;
   background-color: white;
   border: none;
-  width: 100%;
+  outline: none;
 }
 
 .registerButton {
@@ -53,8 +54,10 @@
   background-color: teal;
   border: none;
   color: white;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 10px;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .loginButton {
@@ -64,6 +67,9 @@
   cursor: pointer;
   border: none;
   color: white;
-  padding: 10px;
+  padding: 5px;
   border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+
 }

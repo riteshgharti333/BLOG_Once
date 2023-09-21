@@ -35,8 +35,6 @@
   position: relative;
 }
 
-.title {
-}
 
 .topLeft,
 .topRight {
@@ -45,8 +43,29 @@
   justify-content: center;
 }
 
-.topCenter {
+@media (max-width: 480px) {
+  .top{
+    justify-content: space-between;
+  }
+  .topCenter {
+    display: none;
+  }
+
+  .topRight {
+  margin-right: 15px;
+  }
+
+  .logo h1{
+    font-size: 25px;
+  }
+
+  .scrolled{
+    justify-content: space-between; 
+  }
+
 }
+
+
 
 .topIcon {
   font-size: 20px;
@@ -61,6 +80,19 @@
   border-radius: 50px;
   object-fit: cover;
   cursor: pointer;
+}
+
+.username{
+ border-radius: 5px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+  background: teal;
+  display:inline-block;
+  padding: 5px 10px;
+  font-size: 25px;
+  text-transform: uppercase;
+  color: aliceblue;
 }
 
 .topList {

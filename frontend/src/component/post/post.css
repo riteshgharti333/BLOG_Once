@@ -10,6 +10,18 @@
   border-radius: 7px;
 }
 
+@media (max-width: 480px) {
+ 
+  .post {
+    width: 420px;
+    margin: 0px 25px 40px 25px;
+  }
+  
+  .postImg {
+    width: 100%;
+  }
+}
+
 .postInfo {
   display: flex;
   flex-direction: column;

@@ -1,4 +1,6 @@
 import "./aboutUs.css";
+import aboutImg from "../../assets/images/aboutimg.webp"
+
 
 const AboutUs = () => {
   return (
@@ -7,7 +9,7 @@ const AboutUs = () => {
         <div className="left">
           <img
             className="intoImg"
-            src="https://wallpaperaccess.com/full/2362086.png"
+            src={aboutImg}
             alt=""
           />
           <div className="follow">

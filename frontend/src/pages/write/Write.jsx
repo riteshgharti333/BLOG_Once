@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import "./write.css";
 import axios from "axios";
 import { Context } from "../../context/Context";
-import uploadToCloudinary from "./upload"; // Import your Cloudinary upload function
+import uploadToCloudinary from "../../upload"; 
 
 export default function Write() {
   const [title, setTitle] = useState("");
@@ -32,8 +32,8 @@ export default function Write() {
 
     try {
       // Now, you can send your post data (including the image URL) to your server or API
-      const res = await axios.post("/posts", newPost);
-      window.location.replace("/post/" + res.data._id);
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}posts`, newPost);
+      window.location.replace(`/post/` + res.data._id);
     } catch (err) {
       console.error("Error creating post:", err);
     }

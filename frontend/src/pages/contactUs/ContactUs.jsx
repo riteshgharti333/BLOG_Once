@@ -1,4 +1,6 @@
 import "./contactUs.css";
+import contactImg from "../../assets/images/contact.png"
+
 
 const ContactUs = () => {
   return (
@@ -7,7 +9,7 @@ const ContactUs = () => {
         <div className="left">
           <div className="contactImg">
             <img className="contact-Img"
-              src="https://freepngimg.com/download/artwork/90606-wiki-boy-behavior-nobi-doraemon-human-nobita.png"
+              src={contactImg}
               alt=""
             />
           </div>

@@ -43,6 +43,20 @@ color: lightcoral;
     object-fit: cover; 
 }
 
+.username{
+    margin: 10px 0px;
+}
+
+.username h1{
+    background: teal;
+    display:inline-block;
+    padding: 10px 20px;
+    border-radius: 50%;
+    text-transform: uppercase;
+    color: aliceblue;
+
+}
+
 .settingsPPIcon{
     width: 25px;
     height: 25px;

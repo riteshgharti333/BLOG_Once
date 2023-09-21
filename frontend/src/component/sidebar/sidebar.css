@@ -12,6 +12,13 @@
 
 }
 
+@media (max-width: 480px) {
+    .sidebar {
+      display: none;
+      flex: 0;
+    }
+  }
+
 .sidebarItem{
     display: flex;
     flex-direction: column;

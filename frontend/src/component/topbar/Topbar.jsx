@@ -5,7 +5,6 @@ import "./topbar.css";
 
 export default function Topbar() {
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5000/images/";
 
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -58,8 +57,8 @@ export default function Topbar() {
       <div className="topRight">
         {user ? (
           <>
-            <Link to="/settings">
-              <img className="topImg" src={PF + user.profilepic} alt="" />
+            <Link to="/settings" className="link">
+              <h1 className="username">{user.username}</h1>
             </Link>
             <button className="logoutBtn" onClick={handLogout}>
               {user && "Logout"}

@@ -2,13 +2,14 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./sidebar.css";
+import aboutImg from "../../assets/images/aboutimg.webp"
 
 export default function Sidebar() {
   const [cats, setCats] = useState([]);
 
   useEffect(() => {
     const getCats = async () => {
-      const res = await axios.get("/categories");
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}categories`);
       setCats(res.data);
     };
     getCats();
@@ -19,7 +20,7 @@ export default function Sidebar() {
       <div className="sidebarItem">
         <span className="sidebarTitle">ABOUT ME </span>
         <img
-          src="https://wallpaperaccess.com/full/2362086.png"
+          src={aboutImg}
           alt=""
         />
         <p className="sidebarDsc">Welcome to my corner of the web! I'm <span className="name">Ritesh Gharti</span>, a passionate MERN stack developer on a mission to craft digital experiences that seamlessly blend technology and creativity.
@@ -29,7 +30,7 @@ export default function Sidebar() {
         <span className="sidebarTitle">CATEGORIES</span>
         <ul className="sidebarList">
           {cats.map((c) => (
-            <Link to={`/?cat=${c.name}`} className="link">
+            <Link to={`http://localhost:5000/api/?cat=${c.name}`} className="link">
               <li className="sidebarListItem" key={c._id}>{c.name}</li>
             </Link>
           ))}

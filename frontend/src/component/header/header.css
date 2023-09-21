@@ -19,6 +19,27 @@
 
 }
 
+@media (max-width: 480px) {
+  .headerDsc{
+    margin: 0;
+  }
+  .headerTitle{
+     font-size: 25px;
+  }
+  .topCenter {
+    display: none;
+  }
+
+  .logo h1{
+    font-size: 25px;
+  }
+
+  .headerBtn{
+    margin-top: 10px;
+  }
+
+}
+
 .headerBtn{
   background: teal;
   border: none;

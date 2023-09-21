@@ -9,19 +9,19 @@ import "./home.css"
 
 export default function Home() {
 
-
+ 
   const [posts , setposts] = useState([]);
   const {search} = useLocation();
 
 
   useEffect(() =>{
     const fetchPosts = async () =>{
-      const res = await axios.get("/posts" + search)
+      console.log(process.env.REACT_APP_API_URL)
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}posts` + search)
       setposts(res.data);
     }
     fetchPosts();
   } , [search]);
-
    return (
     <>
     <Header/>

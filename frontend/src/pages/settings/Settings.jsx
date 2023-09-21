@@ -3,6 +3,7 @@ import Sidebar from "../../component/sidebar/Sidebar";
 import { useContext, useState } from "react";
 import { Context } from "../../context/Context";
 import axios from "axios";
+import uploadToCloudinary from "../../upload";
 
 export default function Settings() {
   const [file, setFile] = useState(null);
@@ -12,8 +13,8 @@ export default function Settings() {
   const [success, setSuccess] = useState(false);
 
   const { user , dispatch } = useContext(Context);
+  console.log(user)
 
-  const PF  = "http://localhost:5000/images/"
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,17 +27,17 @@ export default function Settings() {
       password,
     };
     if (file) {
-      const data = new FormData();
-      const filename = Date.now() + file.name;
-      data.append("name", filename);
-      data.append("file", file);
-      updatedUser.profilepic = filename;
       try {
-        await axios.post("/upload", data);
-      } catch (err) {}
+        const cloudinaryResponse = await uploadToCloudinary(file);
+
+        // Set the Cloudinary URL in your newPost object
+        updatedUser.photo = cloudinaryResponse.secure_url;
+      } catch (error) {
+        console.error("Error uploading image to Cloudinary:", error);
+      }
     }
     try {
-     const res =  await axios.put("/users/" + user._id, updatedUser);
+     const res =  await axios.put(`${process.env.REACT_APP_API_URL}users/` + user._id, updatedUser);
       setSuccess(true);
     dispatch({type: "UPDATE_SUCCESS" , payload: res.data})
 
@@ -54,9 +55,9 @@ export default function Settings() {
         </div>
         <form className="settingsForm" onSubmit={handleSubmit}>
           <label>Profile Picture</label>
-          <div className="settingsPP">
+          {/* <div className="settingsPP">
             <img
-              src={file ? URL.createObjectURL(file) : PF +  user.profilepic}
+              src={file ? URL.createObjectURL(file) : user.profilepic}
               alt=""
             />
             <label htmlFor="fileInput">
@@ -68,7 +69,9 @@ export default function Settings() {
               style={{ display: "none" }}
               onChange={(e) => setFile(e.target.files[0])}
             />
-          </div>
+          </div> */}
+          <div className="username"><h1>{user.username}
+            </h1></div>
           <label>UserName</label>
           <input
             type="text"

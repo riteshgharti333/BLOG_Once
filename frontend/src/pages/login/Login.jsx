@@ -3,7 +3,6 @@ import { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./login.css";
-import bgImg from "../../images/bg.jpg"
 
 export default function Login() {
   const userRef = useRef();
@@ -14,7 +13,7 @@ export default function Login() {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("/auth/login", {
+      const res = await axios.post(`${process.env.BASE_URL}/auth/login`, {
         username: userRef.current.value,
         password: passwordRef.current.value,
       });
@@ -47,12 +46,13 @@ export default function Login() {
           Login
         </button>
       </form>
-      </div>
       <button className="loginRegisterButton">
         <Link className="link" to="/register">
           Register
         </Link>
       </button>
+      </div>
+
     </div>
   );
 }

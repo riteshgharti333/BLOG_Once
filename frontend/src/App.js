@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useContext} from 'react';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import Topbar from './component/topbar/Topbar';
-import { useContext } from 'react';
 import { Context } from './context/Context';
 import Home from './pages/home/Home';
 import Register from './pages/register/Register';
@@ -40,7 +39,11 @@ function App() {
     { path: '/login', element: user ? <Home /> : <Login /> },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <RouterProvider router={router}>
+      <Outlet/>
+    </RouterProvider>
+  );
 }
 
 export default App;
