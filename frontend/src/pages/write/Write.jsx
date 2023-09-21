@@ -19,7 +19,7 @@ export default function Write({ cloudinaryInstance }) {
     
     if (file) {
       try {
-        const uploadedImage = await cloudinaryInstance.v2.uploader.upload(file, {
+        const uploadedImage = await cloudinaryInstance.uploader.upload(file, {
           folder: 'blog', // Optional: Organize your images in a specific folder on Cloudinary
         });
         

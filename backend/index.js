@@ -23,21 +23,6 @@ mongoose
     console.log(err);
   });
   
-  cloudinary.config({ 
-    cloud_name: 'ddmucrojh', 
-    api_key: '259723169395997', 
-    api_secret: 'U840rM5b3aQoHYZG4UCjJQzuGUE' 
-  });
-
-  async function uploadSampleImage() {
-    try {
-      const result = await cloudinary.uploader.upload("sample.jpg");
-      console.log(result);
-    } catch (error) {
-      console.error('Error uploading image to Cloudinary:', error);
-    }
-  }
-  uploadSampleImage();
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);

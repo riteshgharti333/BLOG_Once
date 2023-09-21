@@ -45,7 +45,6 @@ function App() {
 
   return (
     <RouterProvider router={router}>
-      {/* Pass the 'cld' instance as a prop to components that need it */}
       <Outlet cld={cld} />
     </RouterProvider>
   );
