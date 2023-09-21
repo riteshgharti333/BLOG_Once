@@ -8,13 +8,14 @@ export default function Header() {
       <div className="left">
         <div className="headerDsc">
           <h1 className="headerTitle">
-            Discover endless inspiration on our blog. Let our words fuel your creativity and
-            curiosity.
+            Discover endless inspiration on our blog. Let our words fuel your
+            creativity and curiosity.
           </h1>
           <Link to="/write">
-          <button className="headerBtn">Write <i class="fa-solid fa-pen"></i></button>
+            <button className="headerBtn">
+              Write <i class="fa-solid fa-pen"></i>
+            </button>
           </Link>
-        
         </div>
       </div>
       <div className="right">

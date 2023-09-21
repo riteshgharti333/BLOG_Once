@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import Topbar from './component/topbar/Topbar';
-import { useContext } from 'react';
 import { Context } from './context/Context';
 import Home from './pages/home/Home';
 import Register from './pages/register/Register';
@@ -12,6 +11,7 @@ import Write from './pages/write/Write';
 import "./app.css";
 import AboutUs from './pages/aboutUs/AboutUs';
 import ContactUs from './pages/contactUs/ContactUs';
+import { Cloudinary } from "@cloudinary/url-gen"; // Import Cloudinary
 
 function App() {
   const { user } = useContext(Context);
@@ -40,7 +40,15 @@ function App() {
     { path: '/login', element: user ? <Home /> : <Login /> },
   ]);
 
-  return <RouterProvider router={router} />;
+  // Create a Cloudinary instance with your cloud name
+  const cld = new Cloudinary({ cloud: { cloudName: 'ddmucrojh' } });
+
+  return (
+    <RouterProvider router={router}>
+      {/* Pass the 'cld' instance as a prop to components that need it */}
+      <Outlet cld={cld} />
+    </RouterProvider>
+  );
 }
 
 export default App;

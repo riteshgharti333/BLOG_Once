@@ -6,9 +6,9 @@ const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/categories");
-const multer = require("multer");
 const path = require("path");
 dotenv.config();
+const cloudinary = require('cloudinary').v2;
 
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
@@ -22,21 +22,22 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-
   
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "images");
-  },
-  filename: (req, file, cb) => {
-    cb(null, req.body.name);
-  },
-});
+  cloudinary.config({ 
+    cloud_name: 'ddmucrojh', 
+    api_key: '259723169395997', 
+    api_secret: 'U840rM5b3aQoHYZG4UCjJQzuGUE' 
+  });
 
-const upload = multer({ storage: storage });
-app.post("/api/upload", upload.single("file"), (req, res) => {
-  res.status(200).json("File has been Uploaded");
-});
+  async function uploadSampleImage() {
+    try {
+      const result = await cloudinary.uploader.upload("sample.jpg");
+      console.log(result);
+    } catch (error) {
+      console.error('Error uploading image to Cloudinary:', error);
+    }
+  }
+  uploadSampleImage();
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);

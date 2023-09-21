@@ -32,7 +32,6 @@ export default function Register() {
   return (
     <div className="register">
     <div className="resgisterContainer">
-
       <span className="registerTitle">Register</span>
       <form className="registerForm" onSubmit={handleSubmit}>
         <label>Username</label>
