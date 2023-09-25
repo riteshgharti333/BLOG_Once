@@ -43,27 +43,7 @@
   justify-content: center;
 }
 
-@media (max-width: 480px) {
-  .top{
-    justify-content: space-between;
-  }
-  .topCenter {
-    display: none;
-  }
 
-  .topRight {
-  margin-right: 15px;
-  }
-
-  .logo h1{
-    font-size: 25px;
-  }
-
-  .scrolled{
-    justify-content: space-between; 
-  }
-
-}
 
 
 
@@ -128,4 +108,38 @@
   font-size: 20px;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+
+@media (max-width: 480px) {
+  .top{
+    justify-content: space-between;
+  }
+  .topCenter {
+    display: none;
+  }
+
+  .topRight {
+  margin-right: 15px;
+  }
+
+  .logo h1{
+    font-size: 25px;
+  }
+
+  .scrolled{
+    justify-content: space-between; 
+  }
+
+  .logoutBtn{
+    display: none;
+  }
+  .username{
+    display: none;
+  }
+
+  .topList{
+    display: none;
+  }
+
 }

@@ -11,9 +11,19 @@ const path = require("path");
 const cors = require('cors');
 dotenv.config();
 
+const PORT = 5000;
 
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
+
+app.use(cors(
+  {
+  origin: ["https://deploy-mern-1whq.vercel.app"],
+  methods: ["POST", "GET"],
+  credentials: true
+  }
+  ));
+
 app.use("/images", express.static(path.join(__dirname, "/images")));
 
 
@@ -47,6 +57,10 @@ app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
-app.listen(5000, () => {
+app.get("/" , (req,res) => {
+  res.json("Hello");
+})
+
+app.listen(PORT, () => {
   console.log("Backend is runnning");
 });

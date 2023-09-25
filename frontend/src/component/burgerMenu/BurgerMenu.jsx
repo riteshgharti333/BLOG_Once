@@ -1,37 +1,20 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
+import { slide as Menu } from "react-burger-menu";
+import "./burgerMenu.css";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
-import "./topbar.css";
-import BurgerMenu from "../burgerMenu/BurgerMenu";
 
 
-export default function Topbar() {
+const BurgerMenu = () => {
   const { user, dispatch } = useContext(Context);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  const handleScroll = () => {
-    setIsScrolled(window.pageYOffset !== 0);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const handLogout = () => {
     dispatch({ type: "LOGOUT" });
   };
 
   return (
-    <div className={`${isScrolled ? "scrolled" : "top"}`}>
-      <div className="logo">
-        <Link to="/" className="link">
-          <h1 className="title">BLOG</h1>
-        </Link>
-      </div>
-      <div className="topCenter">
+    <div>
+      <Menu width={"280px"} right isOpen={ false }>
         <ul className="topList">
           <li className=" topListItem">
             <Link className="link" to="/">
@@ -53,20 +36,17 @@ export default function Topbar() {
               WRITE
             </Link>
           </li>
-        </ul>
-      </div>
-      <div className="topRight">
         {user ? (
           <>
-            <Link to="/settings" className="link">
+            {/* <Link to="/settings" className="link">
               <h1 className="username">{user.username}</h1>
-            </Link>
-            <button className="logoutBtn" onClick={handLogout}>
+            </Link> */}
+            <li onClick={handLogout}>
               {user && "Logout"}
-            </button>
+            </li>
           </>
         ) : (
-          <ul className="topList">
+          <>
             <li className="topListItem">
               <Link className="link" to="/login">
                 LOGIN
@@ -77,10 +57,12 @@ export default function Topbar() {
                 REGISTER
               </Link>
             </li>
-          </ul>
+            </>
         )}
-      </div>
-      <BurgerMenu/>  
+      </ul>
+      </Menu>
     </div>
   );
-}
+};
+
+export default BurgerMenu;
