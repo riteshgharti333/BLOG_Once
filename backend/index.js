@@ -18,7 +18,7 @@ app.use(express.json());
 
 app.use(cors(
   {
-  origin: ["https://blog-once-api.vercel.app/"],
+  origin: ["https://blog-once-client.vercel.app/"],
   methods: ["POST", "GET"],
   credentials: true
   }
